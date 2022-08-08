@@ -16,7 +16,7 @@ spec:
     targetRevision: {{ .Values.spec.source.targetRevision }}
     helm:
       valueFiles:
-          - values.yaml
+          - helm-guestbook/values.yaml
       parameters:
         - name: image.tag
           value: $ARGOCD_APP_REVISION
