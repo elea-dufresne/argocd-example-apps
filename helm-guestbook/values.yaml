@@ -6,8 +6,15 @@ replicaCount: 1
 
 image:
   repository: gcr.io/heptio-images/ks-guestbook-demo
-  tag: {{ .Values.spec.source.targetRevision }}
+  tag: GITHUB_SHA
   pullPolicy: IfNotPresent
+
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/argoproj/argocd-example-apps
+    targetRevision: HEAD
 
 service:
   type: ClusterIP 
