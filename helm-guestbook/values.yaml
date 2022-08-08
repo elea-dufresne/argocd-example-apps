@@ -6,11 +6,11 @@ replicaCount: 1
 
 image:
   repository: gcr.io/heptio-images/ks-guestbook-demo
-  tag: $GIT_SHA[0..6]
+  tag: {{ .Values.spec.source.targetRevision }}
   pullPolicy: IfNotPresent
 
 service:
-  type: ClusterIP
+  type: ClusterIP 
   port: 80
 
 ingress:
