@@ -14,9 +14,3 @@ spec:
     path: helm-guestbook
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
-    helm:
-      valueFiles:
-          - helm-guestbook/values.yaml
-      parameters:
-        - name: commit_sha
-          value: $ARGOCD_APP_REVISION
