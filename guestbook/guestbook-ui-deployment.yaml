@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: un-nom
+  name: patate
 spec:
   replicas: 1
   revisionHistoryLimit: 3
