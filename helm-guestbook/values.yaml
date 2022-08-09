@@ -4,11 +4,9 @@
 
 replicaCount: 1
 
-github_sha: $ARGOCD_APP_REVISION
-
 image:
   repository: gcr.io/heptio-images/ks-guestbook-demo
-  tag: $ARGOCD_APP_REVISION
+  tag: "" # set via cmd line
   pullPolicy: IfNotPresent
 
 service:
