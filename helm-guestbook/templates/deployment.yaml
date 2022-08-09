@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ substr 0 6 .Values.image.tag }}"
+          image: "{{ .Values.image.repository }}:{{ substr 0 6 .Values.image.tag }}" # take the 7 first char of the github sha
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
