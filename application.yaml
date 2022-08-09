@@ -1,3 +1,6 @@
+---
+# Deployment with this template : kubectl apply -n argocd -f application.yaml
+# Else : argocd app create guestbook --repo https://github.com/elea-dufresne/argocd-example-apps.git --path guestbook --dest-server https://kubernetes.default.svc --dest-namespace default --helm-set-string 'image.tag=${ARGOCD_APP_REVISION}'
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
