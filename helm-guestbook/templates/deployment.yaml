@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | safe_truncate:7 }}"
+          image: "{{ .Values.image.repository }}:{{ substr 0 6 .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
